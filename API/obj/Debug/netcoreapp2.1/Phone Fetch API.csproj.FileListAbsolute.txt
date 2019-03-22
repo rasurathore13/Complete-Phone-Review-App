@@ -1,0 +1,28 @@
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\bin\Debug\netcoreapp2.1\Phone Fetch API.deps.json
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\bin\Debug\netcoreapp2.1\Phone Fetch API.runtimeconfig.json
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\bin\Debug\netcoreapp2.1\Phone Fetch API.runtimeconfig.dev.json
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\bin\Debug\netcoreapp2.1\Phone Fetch API.dll
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\bin\Debug\netcoreapp2.1\Phone Fetch API.pdb
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.csprojAssemblyReference.cache
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.csproj.CoreCompileInputs.cache
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.RazorAssemblyInfo.cache
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.RazorAssemblyInfo.cs
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.AssemblyInfoInputs.cache
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.AssemblyInfo.cs
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.RazorTargetAssemblyInfo.cache
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.dll
+C:\Users\amarendra.rathore\Desktop\Phone Fetch API\obj\Debug\netcoreapp2.1\Phone Fetch API.pdb
+C:\Users\amarendra.rathore\Desktop\API\bin\Debug\netcoreapp2.1\Phone Fetch API.deps.json
+C:\Users\amarendra.rathore\Desktop\API\bin\Debug\netcoreapp2.1\Phone Fetch API.runtimeconfig.json
+C:\Users\amarendra.rathore\Desktop\API\bin\Debug\netcoreapp2.1\Phone Fetch API.runtimeconfig.dev.json
+C:\Users\amarendra.rathore\Desktop\API\bin\Debug\netcoreapp2.1\Phone Fetch API.dll
+C:\Users\amarendra.rathore\Desktop\API\bin\Debug\netcoreapp2.1\Phone Fetch API.pdb
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.csprojAssemblyReference.cache
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.csproj.CoreCompileInputs.cache
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.RazorAssemblyInfo.cache
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.RazorAssemblyInfo.cs
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.AssemblyInfoInputs.cache
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.AssemblyInfo.cs
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.RazorTargetAssemblyInfo.cache
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.dll
+C:\Users\amarendra.rathore\Desktop\API\obj\Debug\netcoreapp2.1\Phone Fetch API.pdb
