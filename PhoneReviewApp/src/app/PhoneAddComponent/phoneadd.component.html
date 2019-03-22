@@ -1,0 +1,149 @@
+<div class="container" style="padding-top: 600px; height: 1300px">
+  <div class="row">
+
+
+    <div class="text-center" *ngIf="!isAUserLoggedIn">
+        <h1>You need to Login First.</h1>
+    </div>
+    <div class="center" *ngIf="isAUserLoggedIn">
+      <div *ngIf="isUserAdmin">
+        <form #addPhoneForm="ngForm" (ngSubmit)="addPhone(addPhoneForm)">
+          <div class="panel panel-primary">
+
+            <div class="panel-heading">
+              <div class="panel-title">
+                Add a New Phone
+              </div>
+            </div>
+
+            <div class="panel-body">
+
+              <div class="form-group" [class.has-error]="PhoneName.invalid && PhoneName.touched">
+                <label for="phoneName" class="form-label">Phone Name</label>
+                <input required type="text" id="phoneName" class="form-control" name="phoneName"
+                [(ngModel)]="phoneName" #PhoneName="ngModel">
+                <span class="help-block" *ngIf="PhoneName.invalid && PhoneName.touched">
+                  Phone Name is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneFrontCamera.invalid && PhoneFrontCamera.touched">
+                <label for="phoneFrontCamera" class="form-label">Phone Front Camera</label>
+                <select required name="phoneFrontCamera" id="phoneFrontCamera" class="form-control"
+                [(ngModel)]="phoneFrontCamera" #PhoneFrontCamera="ngModel">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <span class="help-block" *ngIf="PhoneFrontCamera.invalid && PhoneFrontCamera.touched">
+                  Phone Front Camera is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneBackCamera.invalid && PhoneBackCamera.touched">
+                <label for="phoneBackCamera" class="form-label">Phone Back Camera</label>
+                <select required name="phoneBackCamera" id="phoneBackCamera" class="form-control"
+                [(ngModel)]="phoneBackCamera" #PhoneBackCamera="ngModel">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <span class="help-block" *ngIf="PhoneBackCamera.invalid && PhoneBackCamera.touched">
+                  Phone Back Camera is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneScreen.invalid && PhoneScreen.touched">
+                <label for="phoneScreen" class="form-label">Phone Screen</label>
+                <select required name="phoneScreen" id="phoneScreen" class="form-control"
+                [(ngModel)]="phoneScreen" #PhoneScreen="ngModel">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <span class="help-block" *ngIf="PhoneScreen.invalid && PhoneScreen.touched">
+                  Phone Screen is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneBattery.invalid && PhoneBattery.touched">
+                <label for="phoneBattery" class="form-label">Phone Battery</label>
+                <select required name="phoneBattery" id="phoneBattery" class="form-control"
+                [(ngModel)]="phoneBattery" #PhoneBattery="ngModel">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <span class="help-block" *ngIf="PhoneBattery.invalid && PhoneBattery.touched">
+                  Phone Battery is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneSpeaker.invalid && PhoneSpeaker.touched">
+                <label for="phoneSpeaker" class="form-label">Phone Speaker</label>
+                <select required name="phoneSpeaker" id="phoneSpeaker" class="form-control"
+                [(ngModel)]="phoneSpeaker" #PhoneSpeaker="ngModel">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <span class="help-block" *ngIf="PhoneSpeaker.invalid && PhoneSpeaker.touched">
+                  Phone Speaker is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneDate.invalid && PhoneDate.touched">
+                <label for="phoneDate" class="form-label">Phone Release Date</label>
+                <input required type="date" name="phoneDate" id="phoneDate" class="form-control"
+                [(ngModel)]="phoneDate" #PhoneDate="ngModel">
+                <span class="help-block" *ngIf="PhoneDate.invalid && PhoneDate.touched">
+                  Phone Release Date is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneImageLink.invalid && PhoneImageLink.touched">
+                <label for="phoneImageLink" class="form-label">Phone Image Link</label>
+                <input required type="text" name="phoneImageLink" id="phoneImageLink" class="form-control"
+                [(ngModel)]="phoneImageLink" #PhoneImageLink="ngModel">
+                <span class="help-block" *ngIf="PhoneImageLink.invalid && PhoneImageLink.touched">
+                  Phone Image Link is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="PhoneDetails.invalid && PhoneDetails.touched">
+                <label for="phoneDetails" class="form-label">Phone Details as JSON</label>
+                <textarea required type="text" name="phoneDetails" id="phoneDetails" class="form-control"
+                [(ngModel)]="phoneDetails" #PhoneDetails="ngModel"></textarea>
+                <span class="help-block" *ngIf="PhoneDetails.invalid && PhoneDetails.touched">
+                  Phone Details is Required
+                </span>
+              </div>
+
+            </div>
+
+            <div class="panel-footer">
+              <button type="Submit" class="btn btn-primary">Submit</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <div class="text-center" *ngIf="!isUserAdmin">
+        <h2>
+          Sorry, But it seems like you don't have sufficient privilages to add a Phone
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,201 @@
+<div class="container" style="padding-top: 70px;">
+
+  <!-- The below div block if for when the Page has not loaded yet -->
+  <div *ngIf="isPhoneIDValid">
+    <div *ngIf="!phoneDetails">
+      <h1>
+        Please wait the phone Details are loading...
+      </h1>
+    </div>
+  </div>
+
+  <!-- The below div block is for when the phone Details was fetched and is used to display them -->
+  <div *ngIf="phoneDetails">
+
+      <!-- The below div for properly and center aligning images of the phone -->
+      <div class="row">
+        <div class="col-lg-2 col-md-1 col-sm-0">
+        </div>
+
+        <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+          <img src="{{ phoneDetails.phone_Image_Link }}" style="width: 100%;">
+        </div>
+
+        <div class="col-lg-2 col-md-1 col-sm-0">
+        </div>
+      </div>
+
+      <!-- The below div is for the name of the Phone -->
+      <div class="row text-center">
+        <h1>{{ phoneDetails.phone_Name }}</h1>
+      </div>
+
+      <!-- The below div is for the Details of the Phone -->
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          <h2  style="text-align: center;">Details</h2>
+
+          <h3 *ngIf="!phoneDetailList">
+            No Details were Found
+          </h3>
+
+          <div *ngFor="let key of listOfKeysOfDetails">
+            <span style="font-size: 25px">
+                {{ key }} :
+            </span>
+
+            <!-- The below peice of code is for when a particular key in the response JSON is a string -->
+            <span *ngIf="checkerForString(phoneDetailList[key])" style="font-size: 16px">
+              {{ phoneDetailList[key] }}
+            </span>
+
+            <!-- The below peice of code is for when a particular key in the response JSON has an object rather than a string -->
+
+            <div *ngIf="!checkerForString(phoneDetailList[key])">
+
+              <div *ngFor="let newKey of listOfKeysMaker(phoneDetailList[key])">
+                <span style="font-style: italic">
+                  {{ newKey }} :
+                </span>
+                <span>
+                  {{ phoneDetailList[key][newKey] }}
+                </span>
+              </div>
+
+            </div>
+
+            <!-- The below two break tags are there so that we can have a little space between two rows of details -->
+            <br>
+            <br>
+
+          </div>
+        </div>
+
+        <!-- The below div is for displaying the Ratings of the Phone -->
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h2 style="text-align: center;">Ratings<span style="font-size: 15px"> By Critics</span></h2>
+
+                <h3 class="">Front Camera :
+                  <span *ngIf="!phoneDetails.phone_Front_Camera">N.A.</span>
+                  <span *ngIf="phoneDetails.phone_Front_Camera">
+                    <span *ngFor="let star of arrayMaker(phoneDetails.phone_Front_Camera)"><img src="/assets/star.png"></span>
+                  </span>
+                </h3>
+
+
+                <h3 class="">Back Camera :
+                    <span *ngIf="!phoneDetails.phone_Back_Camera">N.A.</span>
+                    <span *ngIf="phoneDetails.phone_Back_Camera">
+                      <span *ngFor="let star of arrayMaker(phoneDetails.phone_Back_Camera)"><img src="/assets/star.png"></span>
+                    </span>
+                </h3>
+
+                <h3 class="">Phone Screen :
+                    <span *ngIf="!phoneDetails.phone_Screen">N.A.</span>
+                    <span *ngIf="phoneDetails.phone_Screen">
+                      <span *ngFor="let star of arrayMaker(phoneDetails.phone_Screen)"><img src="/assets/star.png"></span>
+                    </span>
+                </h3>
+
+                <h3 class="">Battery :
+                    <span *ngIf="!phoneDetails.phone_Battery">N.A.</span>
+                    <span *ngIf="phoneDetails.phone_Battery">
+                      <span *ngFor="let star of arrayMaker(phoneDetails.phone_Battery)"><img src="/assets/star.png"></span>
+                    </span>
+                </h3>
+
+                <h3 class="">Speaker :
+                    <span *ngIf="!phoneDetails.phone_Speaker">N.A.</span>
+                    <span *ngIf="phoneDetails.phone_Speaker">
+                      <span *ngFor="let star of arrayMaker(phoneDetails.phone_Speaker)"><img src="/assets/star.png"></span>
+                    </span>
+                </h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <textarea class="form-control" placeholder="Make a Review..." type="text" rows="6" #userReview></textarea>
+              <br>
+              <button (click)='submitReview(userReview.value)' [disabled]='isReviewSubmitted' class="btn btn-primary" type="button" style="width: 100%">Submit</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- The below div is for the Reviews of the Phone -->
+      <div class="row">
+
+        <!-- The below div is for the Good Reviews of the Phone -->
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <h2 class="text-center">Good Reviews <span> ({{ totalGoodReviews }})</span></h2>
+          <div *ngIf="listOfGoodReviews">
+
+            <ul *ngFor="let review of listOfGoodReviews">
+              <li>
+                {{ review.review }}
+              </li>
+            </ul>
+
+          </div>
+          <div *ngIf="listOfGoodReviews.length === 0">
+            <h3>
+              Sorry there are no Good Reviews for {{ phoneDetails.phone_Name }} at the moment
+            </h3>
+          </div>
+
+        </div>
+
+        <!-- The below div is for the Bad Reviews of the Phone -->
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h2 class="text-center">Neutral or Mixed Reviews <span> ({{ totalNeutralReviews }})</span></h2>
+
+            <div *ngIf="listOfNeutralReviews">
+
+              <ul *ngFor="let review of listOfNeutralReviews">
+                <li>
+                  {{ review.review }}
+                </li>
+              </ul>
+
+            </div>
+            <div *ngIf="listOfNeutralReviews.length === 0">
+              <h3>
+                Sorry there are no Neutral Reviews for {{ phoneDetails.phone_Name }} at the moment
+              </h3>
+            </div>
+
+        </div>
+
+        <!-- The below div is for the Bad Reviews of the Phone -->
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h2 class="text-center">Bad Reviews <span> ({{ totalBadReviews }})</span></h2>
+
+            <div *ngIf="listOfBadReviews">
+
+              <ul *ngFor="let review of listOfBadReviews">
+                <li>
+                  {{ review.review }}
+                </li>
+              </ul>
+
+            </div>
+            <div *ngIf="listOfBadReviews.length === 0">
+              <h3>
+                Sorry there are no Bad Reviews for {{ phoneDetails.phone_Name }} at the moment
+              </h3>
+            </div>
+
+        </div>
+      </div>
+
+  </div>
+
+  <div *ngIf="!isPhoneIDValid">
+    <h1>
+      The Phone Does not exists.
+    </h1>
+  </div>
+
+</div>

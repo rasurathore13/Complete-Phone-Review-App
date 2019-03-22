@@ -1,0 +1,78 @@
+<div class="container" style="padding: 70px; height: 1000px">
+
+  <div class="center" *ngIf="!isUserLoggedIn">
+    <h1>You need to Login First.</h1>
+  </div>
+
+  <div class="center" *ngIf="isUserLoggedIn">
+
+    <div *ngIf="!user">
+        <h1>
+          Please wait till your details are loading
+        </h1>
+    </div>
+
+    <div *ngIf="user">
+      <form #profileForm="ngForm" (ngSubmit)="saveProfile()">
+        <div class="panel panel-primary">
+
+          <div class="panel-heading">
+            <div class="panel-title">
+              <span *ngIf="!user.name"> {{ user.email }} </span>
+              <span *ngIf="user.name"> {{ user.name }} </span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+
+            <div class="form-group">
+              <label class="form-label">Email : {{ user.email }}</label>
+            </div>
+
+            <div class="form-group" [class.has-error]="Name.invalid && Name.touched">
+              <label for="name">Name</label>
+              <input type="text" name="name" [value]="user.name" class="form-control"
+              id="name" [(ngModel)]="user.name" #Name="ngModel">
+            </div>
+
+            <div class="form-group">
+              <label for="date_Of_Birth">
+                Date Of Birth
+                <span *ngIf="user.date_Of_Birth">Current : {{ user.date_Of_Birth | slice : 0 : 10 }}</span>
+              </label>
+              <input type="date" name="date_Of_Birth" [value]="user.date_Of_Birth"
+                  class="form-control" id="date_Of_Birth" [(ngModel)]="user.date_Of_Birth">
+            </div>
+
+            <div class="form-group" [class.has-error]="Gender.invalid && Gender.touched">
+              <label for="gender">Gender</label>
+              <select name="gender" [value]="user.gender" class="form-control"
+                id="gender" [(ngModel)]="user.gender" #Gender="ngModel">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Others</option>
+              </select>
+            </div>
+
+            <div class="form-group" [class.has-error]="dp.invalid && dp.touched">
+              <label for="display_Picture">Display Picture Link</label>
+              <input type="text" name="display_Picture" [value]="user.display_Picture"
+               class="form-control" id="display_Picture"[(ngModel)]="user.display_Picture" #dp="ngModel">
+              <div *ngIf="user.display_Picture">
+                <img [src]="user.display_Picture" style="height:200px">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="panel-footer">
+            <button [disabled]="submitButtonDisabled" type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

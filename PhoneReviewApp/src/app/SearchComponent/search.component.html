@@ -1,0 +1,36 @@
+<div class="container" style="padding-top: 70px">
+
+  <h1 *ngIf="!isSearchValid">
+    Sorry we could not find anything related to {{ searchValue }}
+  </h1>
+
+  <h1 *ngIf="isSearchValid">
+      <div *ngFor="let phone of listOfSearchedPhones">
+        <div class="row">
+
+          <div class="col-sm-0 col-md-1 col-lg-2 col-xl-3">
+          </div>
+
+          <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
+            <div class="card" style="padding-bottom: 15px">
+                <img class="card-img-top" src="{{ phone.phone_Image_Link }}" alt="Card image" style="width:100%">
+                <div class="card-body text-center">
+                  <h4 class="card-title">{{ phone.phone_Name }}</h4>
+                  <p class="card-text"> {{ phone.phone_Date_Of_Release }} </p>
+                  <a href="/Phone/{{ phone.phone_ID }}" class="btn btn-primary center-block">Open Phone Profile</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-sm-0 col-md-1 col-lg-2 col-xl-3">
+
+          </div>
+
+        </div>
+      </div>
+    </h1>
+
+  <h1 class="text-center">
+
+  </h1>
+</div>

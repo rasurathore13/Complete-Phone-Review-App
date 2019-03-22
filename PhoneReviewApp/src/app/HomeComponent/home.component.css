@@ -1,0 +1,22 @@
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 15px; /* Added */
+}
+.hero-image {
+  height: 830px;
+  background-image: url("/assets/jumbo5.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.text-in-hero-image{
+  text-align: center;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}

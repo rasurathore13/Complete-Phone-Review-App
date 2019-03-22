@@ -1,0 +1,52 @@
+<div class="jumbotron hero-image">
+  <div class="text-in-hero-image">
+    <span style="font-family: 'Oswald', sans-serif; font-size: 80px">REVIEWS&nbsp;
+      <span style="font-family: 'Slabo 27px', serif; font-size: 50px">दैट
+        <span style="font-family: 'Oswald', sans-serif; font-size: 80px">&nbsp;COUNTS
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+
+<div class="container" style="padding-top: 50px;">
+
+    <div *ngIf="phones">
+      <div *ngFor="let phone of phones">
+
+        <div class="row">
+
+          <div class="col-sm-0 col-md-1 col-lg-2 col-xl-3">
+
+          </div>
+
+          <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
+            <div class="card">
+                <img class="card-img-top" src="{{ phone.phone_Image_Link }}" alt="Card image" style="width:100%">
+                <div class="card-body text-center">
+                  <h4 class="card-title">{{ phone.phone_Name }}</h4>
+                  <p class="card-text"> {{ phone.phone_Date_Of_Release }} </p>
+                  <a href="/Phone/{{ phone.phone_ID }}" class="btn btn-primary center-block">Open Phone Profile</a>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-sm-0 col-md-1 col-lg-2 col-xl-3">
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <div *ngIf="!phones">
+      <h1>
+        Please wait while the Phone List is Loading...
+      </h1>
+    </div>
+    <div class="text-center" style="padding-top: 15px">
+      <button *ngIf="phones" (click)="loadMorePhones()" class="btn btn-primary">Click Me To LOad More Phones</button>
+    </div>
+</div>

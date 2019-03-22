@@ -1,0 +1,55 @@
+<div class="container" style="padding-top: 70px;height: 100vh">
+    <div class="row center">
+      <form #signupForm="ngForm" (ngSubmit)="signUp(signupForm)" *ngIf="!isAUserLoggedIn">
+        <div class="panel panel-primary">
+
+          <div class="panel-heading">
+            <div class="panel-title">
+              Sign Up
+            </div>
+          </div>
+
+          <div class="panel-body">
+
+            <div class="form-group" [class.has-error]='Email.invalid && Email.touched'>
+              <label for="email" class="form-label">Email</label>
+              <input required type="email" id="email" class="form-control" name="email"
+              [(ngModel)]="email" #Email="ngModel">
+              <span class="help-block" *ngIf="Email.invalid && Email.touched">
+                Email is required
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="Password.invalid && Password.touched">
+              <label for="password" class="form-label">Password</label>
+              <input required type="password" id="password" class="form-control" name="password"
+               [(ngModel)]="password" #Password="ngModel" autocomplete="false">
+               <span class="help-block" *ngIf="Password.invalid && Password.touched">
+                Password is Required
+               </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="ConfirmPassword.invalid && ConfirmPassword.touched">
+              <label for="confirmPassword">Confirm Password</label>
+              <input required type="password" id="confirmPassword" class="form-control" name="confirmPassword"
+               [(ngModel)]="confirmPassword" #ConfirmPassword="ngModel" autocomplete="false">
+                <span class="help-block" *ngIf="ConfirmPassword.invalid && ConfirmPassword.touched">
+                  Confirm Password is Required
+                </span>
+            </div>
+
+          </div>
+
+          <div class="panel-footer">
+            <button type="Submit" class="btn btn-primary">Sign Up</button>
+          </div>
+
+        </div>
+      </form>
+
+      <div class="text-center center" *ngIf="isAUserLoggedIn">
+          <h1>A user is already Logged in. First Log out and then procede.</h1>
+      </div>
+
+    </div>
+</div>
