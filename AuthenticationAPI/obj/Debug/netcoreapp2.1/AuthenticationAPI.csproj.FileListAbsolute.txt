@@ -1,0 +1,14 @@
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\bin\Debug\netcoreapp2.1\AuthenticationAPI.deps.json
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\bin\Debug\netcoreapp2.1\AuthenticationAPI.runtimeconfig.json
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\bin\Debug\netcoreapp2.1\AuthenticationAPI.runtimeconfig.dev.json
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\bin\Debug\netcoreapp2.1\AuthenticationAPI.dll
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\bin\Debug\netcoreapp2.1\AuthenticationAPI.pdb
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.csprojAssemblyReference.cache
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.csproj.CoreCompileInputs.cache
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.RazorAssemblyInfo.cache
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.RazorAssemblyInfo.cs
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.AssemblyInfoInputs.cache
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.AssemblyInfo.cs
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.RazorTargetAssemblyInfo.cache
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.dll
+C:\Users\amarendra.rathore\Desktop\AuthenticationAPI\obj\Debug\netcoreapp2.1\AuthenticationAPI.pdb
