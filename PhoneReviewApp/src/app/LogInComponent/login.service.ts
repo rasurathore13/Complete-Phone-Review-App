@@ -10,6 +10,8 @@ class Credentials {
 
 @Injectable()
 export class LoginService {
+  authenticationServer = 'https://authenticationapiforphonereviewapp.azurewebsites.net';
+  appServer = 'https://apiforphonereviewapp.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   loginUser(loginForm: NgForm): Observable<object> {
@@ -22,7 +24,7 @@ export class LoginService {
     const body = new Credentials();
     body.Email = loginForm.value.email;
     body.Password = loginForm.value.password;
-    return this.http.post('http://localhost:20485/api/JWT/Token',
+    return this.http.post(this.authenticationServer + '/api/JWT/Token',
     body, headers);
   }
 }

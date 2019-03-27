@@ -5,14 +5,16 @@ import { Reviews } from './Reviews';
 
 @Injectable()
 export class PhoneViewService {
+  authenticationServer = 'https://authenticationapiforphonereviewapp.azurewebsites.net';
+  appServer = 'https://apiforphonereviewapp.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   getPhone(phoneID: number): Observable<object> {
-    return this.http.get('http://localhost:18561/api/FetchPhones/GetPhoneWithID?id=' + phoneID);
+    return this.http.get(this.appServer + '/api/FetchPhones/GetPhoneWithID?id=' + phoneID);
   }
 
   getReviews(phoneID: number): Observable<object> {
-    return this.http.get('http://localhost:18561/api/FetchReviews/GetReviewsByPhoneID?id=' + phoneID);
+    return this.http.get(this.appServer + '/api/FetchReviews/GetReviewsByPhoneID?id=' + phoneID);
   }
 
   getDetails(phoneID: number): Observable<object> {
@@ -28,7 +30,7 @@ export class PhoneViewService {
       })
     };
     return this.http
-        .post('http://localhost:18561/api/FetchReviews/SubmitReviews?Phone_ID=' + phoneID,
+        .post(this.appServer + '/api/FetchReviews/SubmitReviews?Phone_ID=' + phoneID,
          JSON.stringify({UserReview : userReview}), headers);
   }
 

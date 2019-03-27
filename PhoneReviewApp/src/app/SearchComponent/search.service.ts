@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class SearchService {
+  authenticationServer = 'https://authenticationapiforphonereviewapp.azurewebsites.net';
+  appServer = 'https://apiforphonereviewapp.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   searchPhone(searchPhrase: string): Observable<object> {
@@ -12,6 +14,6 @@ export class SearchService {
   }
 
   getPhonesFromDatabase(idsOfSearchResult: number[]): Observable<object> {
-    return this.http.post('http://localhost:18561/api/FetchPhones/GetSearchedListOfPhones', { idsOfSearchResults : idsOfSearchResult });
+    return this.http.post(this.appServer + '/api/FetchPhones/GetSearchedListOfPhones', { idsOfSearchResults : idsOfSearchResult });
   }
 }

@@ -17,7 +17,8 @@ class phone {
 
 @Injectable()
 export class PhoneAddService{
-
+  authenticationServer = 'https://authenticationapiforphonereviewapp.azurewebsites.net';
+  appServer = 'https://apiforphonereviewapp.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   isUserAdmin() {
@@ -28,7 +29,7 @@ export class PhoneAddService{
         'Content-Type':  'application/json',
       })
     };
-    return this.http.get('http://localhost:18561/api/FetchUser/IsUserAdmin', headers);
+    return this.http.get(this.appServer + '/api/FetchUser/IsUserAdmin', headers);
     }
 
     addPhoneToSql(addPhoneForm: NgForm): Observable<object> {
@@ -48,7 +49,7 @@ export class PhoneAddService{
         Phone_Image_Link: addPhoneForm.value.phoneImageLink,
         Phone_Details: addPhoneForm.value.phoneDetails,
       };
-      return this.http.post('http://localhost:18561/api/FetchPhones/AddPhone', body, header);
+      return this.http.post(this.appServer + '/api/FetchPhones/AddPhone', body, header);
     }
 
     addPhoneToElasticSearch(phone_Details): Observable<object> {

@@ -15,6 +15,8 @@ class User {
 
 @Injectable()
 export class SignupService {
+  authenticationServer = 'https://authenticationapiforphonereviewapp.azurewebsites.net';
+  appServer = 'https://apiforphonereviewapp.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   signupUser(signupForm: NgForm): Observable<object> {
@@ -26,7 +28,7 @@ export class SignupService {
     const body = new Credentials();
     body.Email = signupForm.value.email;
     body.Password = signupForm.value.password;
-    return this.http.post('http://localhost:20485/api/JWT/Register',
+    return this.http.post(this.authenticationServer + '/api/JWT/Register',
     body, headers);
   }
 
@@ -40,7 +42,7 @@ export class SignupService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post('http://localhost:18561/api/FetchUser/CreateUser', user, headers);
+    return this.http.post(this.appServer + '/api/FetchUser/CreateUser', user, headers);
   }
 
 }

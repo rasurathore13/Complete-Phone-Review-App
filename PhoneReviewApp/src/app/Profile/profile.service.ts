@@ -5,6 +5,8 @@ import { User } from './User';
 
 @Injectable()
 export class ProfileService {
+  authenticationServer = 'https://authenticationapiforphonereviewapp.azurewebsites.net';
+  appServer = 'https://apiforphonereviewapp.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   getUser(): Observable<object> {
@@ -14,7 +16,7 @@ export class ProfileService {
         'Content-Type': 'application/json'
       }
     };
-    return this.http.get('http://localhost:18561/api/FetchUser/GetUserDetails', header);
+    return this.http.get(this.appServer + '/api/FetchUser/GetUserDetails', header);
   }
 
   submitUserDetails(user: User) {
@@ -24,6 +26,6 @@ export class ProfileService {
         'Content-Type': 'application/json'
       }
     };
-    return this.http.post('http://localhost:18561/api/FetchUser/SubmitUserDetails', user, header);
+    return this.http.post(this.appServer + '/api/FetchUser/SubmitUserDetails', user, header);
   }
 }
