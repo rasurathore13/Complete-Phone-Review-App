@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   phones: IPhones[];
   latestPhoneID: number;
   newReview: string;
+  isLoadMorePhonesButtonClicked = false;
 
   constructor(private router: Router, private homeService: HomeService) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -48,11 +49,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   loadMorePhones(): void {
+    this.isLoadMorePhonesButtonClicked = true;
     this.homeService.getPhones(this.numberOfRequestsToPhoneFetchAPI + 1, this.latestPhoneID)
       .subscribe(phoneList => {
           const listOfPhones = phoneList as IPhones[];
           if (listOfPhones.length === 0) {
             window.alert('Sorry there are no more phones to display at the Moment');
+            this.isLoadMorePhonesButtonClicked = false;
           } else {
             this.numberOfRequestsToPhoneFetchAPI++;
             sessionStorage.setItem('numberOfRequestsToPhoneFetchAPI', JSON.stringify(this.numberOfRequestsToPhoneFetchAPI));
@@ -60,6 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
               this.phones.push(phoneList[i]);
             }
             sessionStorage.setItem('phones', JSON.stringify(this.phones));
+            this.isLoadMorePhonesButtonClicked = false;
           }
         });
   }

@@ -47,6 +47,6 @@
       </h1>
     </div>
     <div class="text-center" style="padding-top: 15px">
-      <button *ngIf="phones" (click)="loadMorePhones()" class="btn btn-primary">Click Me To LOad More Phones</button>
+      <button [disabled]='isLoadMorePhonesButtonClicked' *ngIf="phones" (click)="loadMorePhones()" class="btn btn-primary">Click Me To LOad More Phones</button>
     </div>
 </div>
