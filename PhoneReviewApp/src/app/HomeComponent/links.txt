@@ -1,0 +1,9 @@
+https://blogs.msdn.microsoft.com/asiatech/2015/12/28/use-crash-diagnoser-site-extension-to-capture-dump-for-intermittent-exception-issues-or-performance-issues-on-azure-web-app/
+https://blogs.msdn.microsoft.com/benjaminperkins/2017/10/27/how-to-map-an-azure-app-service-web-app-virtual-directory-to-azure-storage-containter/
+https://medium.com/developing-an-angular-4-web-app/adding-routes-for-login-and-home-view-components-be676d786471
+https://www.hostingadvice.com/how-to/update-node-js-latest-version/
+https://myview.rahulnivi.net/build-deploy-angular-app-azure-via-kuduscriptgithub/
+https://passos.com.au/build-and-deploy-an-angular-app-from-github-to-azure-website/
+https://dzone.com/articles/deploy-an-angular-app-from-visual-studio-code-to-a-1
+https://itnext.io/easy-way-to-deploy-a-angular-5-application-to-azure-web-app-using-vsts-pipelines-4a288b9deae1
+http://blog.amitapple.com/post/73574681678/git-deploy-console-app/#.XJ8Of1UzaUn

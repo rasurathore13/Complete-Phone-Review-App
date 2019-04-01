@@ -32,8 +32,11 @@
         </div>
 
         <div class="panel-footer">
-          <button type="Submit" class="btn btn-primary">Log In</button>
+          <button *ngIf="!isSubmitButtonClicked" [disabled]='isSubmitButtonClicked' type="Submit" class="btn btn-primary">Log In</button>
+          <span *ngIf="isSubmitButtonClicked" class="lds-dual-ring"></span>
         </div>
+
+
 
       </div>
     </form>

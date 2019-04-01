@@ -47,6 +47,10 @@
       </h1>
     </div>
     <div class="text-center" style="padding-top: 15px">
-      <button [disabled]='isLoadMorePhonesButtonClicked' *ngIf="phones" (click)="loadMorePhones()" class="btn btn-primary">Click Me To LOad More Phones</button>
+      <div *ngIf="!isLoadMorePhonesButtonClicked">
+          <button [disabled]='isLoadMorePhonesButtonClicked' *ngIf="phones" (click)="loadMorePhones()"
+          class="btn btn-primary">Click Me To LOad More Phones</button>
+      </div>
+      <span *ngIf="isLoadMorePhonesButtonClicked" class="lds-dual-ring"></span>
     </div>
 </div>
