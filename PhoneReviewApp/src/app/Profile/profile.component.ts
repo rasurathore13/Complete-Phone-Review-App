@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
 import { User } from './User';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -14,9 +15,12 @@ export class ProfileComponent implements OnInit
   isUserLoggedIn = false;
   user: User;
 
-  constructor(private profileService: ProfileService) {
+  constructor(private profileService: ProfileService, private router: Router) {
     if (localStorage.getItem('JWTAccessToken')) {
       this.isUserLoggedIn = true;
+    } else {
+      this.isUserLoggedIn = false;
+      this.router.navigate(['/Home']);
     }
   }
 
